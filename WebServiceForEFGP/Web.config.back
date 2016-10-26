@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=301879
+  -->
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WebServiceForEFGP.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <connectionStrings>
+    <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-WebServiceForEFGP-20151126093959.mdf;Initial Catalog=aspnet-WebServiceForEFGP-20151126093959;Integrated Security=True" providerName="System.Data.SqlClient" />
+    
+   
+    <!--測試機-->
+    <add name="NaNaEntities" connectionString="metadata=res://*/Models.EFGPModel.csdl|res://*/Models.EFGPModel.ssdl|res://*/Models.EFGPModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=VMBSDBW04T;initial catalog=NaNa;persist security info=True;user id=EPADM;password=0908@tstar;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />    
+    
+    <!--NANA 正式機-->
+    <!--<add name="NaNaEntities" connectionString="metadata=res://*/Models.EFGPModel.csdl|res://*/Models.EFGPModel.ssdl|res://*/Models.EFGPModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.8.8,1455;initial catalog=NaNa;persist security info=True;user id=epadm;password=epadm#0924;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />-->    
+    <!--<add name="NaNaEntities" connectionString="metadata=res://*/Models.EFGPModel.csdl|res://*/Models.EFGPModel.ssdl|res://*/Models.EFGPModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=172.16.8.8,1455;initial catalog=NaNa;persist security info=True;user id=epadm;password=epadm#0924;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />-->           
+    
+    <!--本機 自動產生 entity object 用-->
+    <!--<add name="NaNaEntities" connectionString="metadata=res://*/Models.EFGPModel.csdl|res://*/Models.EFGPModel.ssdl|res://*/Models.EFGPModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=REXLI_PC\SQLEXPRESS;initial catalog=NaNa;persist security info=True;user id=sa;password=6225#reli;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />-->       
+    
+    <add name="NaNaConnectionString" connectionString="Data Source=VMBSDBW04T;Initial Catalog=NaNa;Persist Security Info=True;User ID=EPADM;Password=0908@tstar" providerName="System.Data.SqlClient" />           
+    
+    <!--ERP DB-->
+    <!--<add name="ERPConnectionString" connectionString="Data Source=ERPSIT;User Id=XXX_EP;Password=tstar@0908;" />-->    
+    <!--<add name="ERPConnectionString" connectionString="Dsn=ERPSIT.VIBO.CORP;Uid=XXX_EP;Pwd=tstar@0908;" />-->
+    <add name="ERPConnectionString" connectionString="Provider=OraOLEDB.Oracle;Data Source=ERPSIT.VIBO.CORP;User Id=XXX_EP;Password=tstar@0908;OLEDB.NET=True;" />
+    <!--<add name="ERPConnectionString" connectionString="Provider=MSDAORA;Data Source=REX;User Id=XXX_EP;Password=tstar@0908;OLEDB.NET=True;" />-->   
+   
+    <!--HCP DB-->
+    <add name="HCPConnectionString" connectionString="Provider=OraOLEDB.Oracle;Data Source=HRISDEV;User Id=XXX_EP;Password=tstar#0986;OLEDB.NET=True;" />  
+    
+    
+  
+  </connectionStrings>
+  <appSettings>
+    <!--MSP API-->
+    <!--<add key="msp_host" value="http://172.22.135.89:8080/MSPSample/efsxmlreqreceiver" />-->
+    <!--<add key="msp_host" value="http://172.22.135.24:6500/tmpiweb/intfefs/efsxmlreqreceiver" />-->
+    <add key="msp_host" value="http://iuatmsp.tstartel.com/tmpiweb/intfefs/efsxmlreqreceiver" />    
+    <!--<add key="msp_host" value="http://imsp.tstartel.com/tmpiweb/intfefs/efsxmlreqreceiver" />-->
+
+    <!--E招募系統-->
+    <add key="hire_host" value="http://www.google.com/" />
+    
+    <!--Process ID 正式環境的流程代號可能與測試環境不同 -->    
+    <add key="NewEmployeeEvaluationProcess" value="PKG14478293768011_clone" />    
+    <add key="HireEmployeeProcess"  value="HireEmployeeProcess" />  
+    
+  </appSettings>
+  
+  <!--<location path="MSP/export/messages">
+    <system.web>
+      <httpRuntime requestPathInvalidCharacters="" />
+    </system.web>
+  </location>-->
+  
+  <system.web>
+    <authentication mode="None" />
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" requestValidationMode="2.0" />
+
+    <webServices>
+      <protocols>
+        <add name="HttpPost" />
+        <add name="HttpGet" />
+      </protocols>
+    </webServices>
+  </system.web>
+  
+  <system.webServer>
+    <httpProtocol>
+      
+      <customHeaders>
+        <clear />
+        <add name="X-UA-Compatible" value="IE=edge" />
+      </customHeaders>
+    </httpProtocol>
+    <modules>
+      <remove name="FormsAuthentication" />
+    </modules>
+    <handlers>
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+      <remove name="OPTIONSVerbHandler" />
+      <remove name="TRACEVerbHandler" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+    </handlers>
+        <staticContent>
+            <mimeMap fileExtension=".woff" mimeType="application/x-font-woff" />
+            <mimeMap fileExtension=".woff2" mimeType="application/x-font-woff" />
+        </staticContent>
+  </system.webServer>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security.OAuth" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security.Cookies" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.1.0" newVersion="3.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-5.2.3.0" newVersion="5.2.3.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:6 /nowarn:1659;1699;1701" />
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" />
+    </compilers>
+  </system.codedom>
+
+ 
+  <system.serviceModel>
+    <bindings />
+    <client />
+  </system.serviceModel>
+  <applicationSettings>
+    <WebServiceForEFGP.Properties.Settings>
+      <setting name="WebServiceForEFGP_NaNa_PLMIntegrationEFGP_PLMIntegrationEFGPService" serializeAs="String">
+        <value>http://172.22.128.187:8086/NaNaWeb/services/PLMIntegrationEFGP</value>
+      </setting>
+    </WebServiceForEFGP.Properties.Settings>
+  </applicationSettings>
+</configuration>

@@ -1,0 +1,200 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using WebServiceForEFGP.Models;
+using WebServiceForEFGP.Models.VeiwModel;
+using WebServiceForEFGP.Models.Services;
+
+
+namespace WebServiceForEFGP.Export {
+    public partial class CostApplyForm : System.Web.UI.Page {
+
+        private AccountItemSvc actSvc = null;
+        private ProcessSvc procSvc = null;
+
+        private AccountItemViewModel.CostApplyFormInstance ins = null;
+        private ProcessViewModel.ProcessHistoryListResult procHistoryIns = null;
+
+        private int list_sort = 0;
+        
+
+        protected void Page_Load(object sender, EventArgs e) {
+            this.actSvc = new AccountItemSvc();
+            this.procSvc = new ProcessSvc();
+
+            //2016/05/30 Stephen Add 目前只有廠商請款會顯示出來，現在一律都不顯示付款群組
+            this.lb_paymentGroup.Visible = false;
+
+            string procSerialNumber = Page.Request.QueryString["p"] as string;
+
+            if (string.IsNullOrEmpty(procSerialNumber)) {
+                this.lt_alert.Text = UtilitySvc.alertMsg("參數錯誤，查無此表單");
+                return; 
+            }
+
+            AccountItemViewModel.CostApplyFormInstanceResult costRet = this.actSvc.getCostApplyFormInstanceResult(procSerialNumber);
+
+            ProcessViewModel.ProcessHistoryListResult procRet = this.procSvc.getProcessHistoryByProcessSerialNumber(procSerialNumber);
+
+
+            if (!costRet.success) {
+                this.lt_alert.Text = UtilitySvc.alertMsg("參數錯誤，查無此表單");
+                return;
+            }
+
+            this.ins = costRet.instance;
+            this.procHistoryIns = procRet;
+
+            this.init();
+
+        }
+
+        protected void init() {
+            WebServiceForEFGP.Models.CostApplyForm c = this.ins.c;
+
+            this.lb_applyDate.Text = c.txtApplyDate;
+            this.lb_formSerialNumber.Text = c.SerialNumber;
+            this.lb_issuer_id.Text = c.txtIssuerId;
+            this.lb_issuer_name.Text = c.txtIssuerName;
+            this.lb_issuer_dept_id.Text = c.txtIssuerDepartmentId;
+            this.lb_issuer_dept_name.Text = c.txtIssuerDepartmentName;
+            this.lb_issuer_ext_no.Text = c.txtIssuerExtNo;
+            this.lb_applyer_id.Text = c.txtApplyerId;
+            this.lb_applyer_name.Text = c.txtApplyerName;
+            this.lb_applyer_dept_id.Text = c.txtApplyerDepartmentId;
+            this.lb_applyer_dept_name.Text = c.txtApplyerDepartmentName;
+            this.lb_applyer_ext_no.Text = c.txtApplyerExtNo;
+
+            this.lb_applyCategory.Text = this.actSvc.getCashApplyTypeList().list.First(x => x.key == c.hidDdlApplyCategorySelected).name;
+            this.lb_retailId.Text = c.txtRetailId;
+            this.lb_retailName.Text = c.btnRetailName;
+
+            this.lb_payeeId.Text = c.txtPayeeId;
+            this.lb_payeeName.Text = c.txtPayeeName;
+            this.lb_paymentTitle.Text = c.txtPaymentTitle;
+            //this.lb_paymentType.Text = c.ddlPaymentType;
+            //this.lb_paymentCondition.Text = c.ddlPaymentCondition;
+            //this.lb_paymentGroup.Text = c.ddlPaymentGroup;
+
+            this.lb_paymentType.Text = c.hidDdlPaymentTypeSelected;
+            this.lb_paymentCondition.Text = c.hidDdlPaymentConditionSelected;
+            this.lb_paymentGroup.Text = c.hidDdlPaymentGroupSelected;
+
+            this.lb_paymentlbCertificate.Text = c.radioPaymentlbCertificate;
+            //this.lb_currency.Text = c.ddlCurrency;
+            this.lb_currency.Text = c.hidDdlCurrencySelected;
+            this.lb_currencyRate.Text = c.txtCurrencyRate.ToString();
+            this.lb_isCitizen.Text = c.radioIsCitizen == "1" ? "是" : "否";
+            this.lb_formNo.Text = c.txtFormNo;
+
+            this.lb_payee_item.Text = c.radioPaymentlbCertificate == "國內統一發票" ? "請款資訊" : "請款暨扣繳資訊";
+
+            this.lbNotWithhold_sum_certificateAmount.Text = c.txtNotWithhold_sum_certificateAmount;
+            this.lbNotWithhold_sum_statementAmount.Text = c.txtNotWithhold_sum_statementAmount;
+            this.lbNotWithhold_sum_taxAmount.Text = c.txtNotWithhold_sum_taxAmount;
+
+
+
+            this.list_sort = 0;
+            if (c.radioPaymentlbCertificate == "國內統一發票") {
+                //this.table_withhold_list.Visible = false;
+                //this.table_notwithhold_list.Visible = true;
+
+                this.rpt_notwithhold.DataSource = this.ins.c_notwithhold_list;
+                this.rpt_notwithhold.DataBind();
+
+            } else {
+                //this.table_notwithhold_list.Visible = false;
+                //this.table_withhold_list.Visible = true;
+
+                this.rpt_withhold.DataSource = this.ins.c_withhold_list;
+                this.rpt_withhold.DataBind();
+
+            }
+
+
+
+            //lb_applyCategory value handler
+            switch (c.hidDdlApplyCategorySelected) {
+                case "salaryAddon":
+                    this.tr_payee_info_line_cert_type.Visible = false;
+                    this.tr_payee_info_line_form_serial_number.Visible = false;
+                    this.tr_payee_info_line_is_citizen.Visible = false;
+                    this.tr_payee_info_line_payment_type.Visible = false;
+                    break;
+                case "pettyCash":
+                    this.tr_payee_info_line_cert_type.Visible = false;
+                    this.tr_payee_info_line_form_serial_number.Visible = false;
+                    this.tr_payee_info_line_is_citizen.Visible = false;
+                    this.tr_payee_info_line_payment_type.Visible = false;
+                    break;
+                case "vendor_apply":
+                    this.tr_payee_info_line_cert_type.Visible = true;
+                    this.tr_payee_info_line_is_citizen.Visible = true;
+                    this.tr_payee_info_line_payment_type.Visible = true;
+                    this.tr_payee_info_line_form_serial_number.Visible = false;
+                    break;
+                case "tempPayment_writeOff":
+
+                    this.tr_payee_info_line_cert_type.Visible = false;
+                    this.tr_payee_info_line_is_citizen.Visible = false;
+                    this.tr_payee_info_line_payment_type.Visible = false;
+
+                    this.tr_payee_info_line_form_serial_number.Visible = true;
+
+                    break;
+
+            }
+
+
+            if (procHistoryIns.success) {
+                this.rpt_process_list.DataSource = procHistoryIns.list;
+                this.rpt_process_list.DataBind();
+            }
+           
+        }
+
+        protected void rpt_notwithhold_ItemDataBound(object sender, RepeaterItemEventArgs e) {
+            Label lb_sort = e.Item.FindControl("lb_sort") as Label;
+            lb_sort.Text = (++this.list_sort).ToString();
+
+            //2016/05/27 Stephen Add 將費用歸屬部門的長度斷行
+            Label lb_gd_belongDepartment = e.Item.FindControl("lb_gd_belongDepartment") as Label;
+            String sgd_belongDepartment = "";
+
+            if (!string.IsNullOrEmpty(lb_gd_belongDepartment.Text.Trim()))
+            {
+                String[] arry = lb_gd_belongDepartment.Text.Trim().Split('(');
+                sgd_belongDepartment = arry[0] + "<BR>(" + arry[1];
+                lb_gd_belongDepartment.Text = sgd_belongDepartment;
+            }
+
+            if (e.Item.ClientID == "rpt_withhold")
+            {
+                Label lb_gd_withholdType = e.Item.FindControl("lb_gd_withholdType") as Label;
+                Label lb_gd_currencyRate = e.Item.FindControl("lb_gd_currencyRate") as Label;
+
+                if (!string.IsNullOrEmpty(lb_gd_withholdType.Text.Trim()))
+                {
+                    switch (lb_gd_withholdType.Text)
+                    {
+                        case "公司負擔":
+                            lb_gd_withholdType.Text = "稅額外加";
+                            break;
+                        case "廠商負擔":
+                            lb_gd_withholdType.Text = "稅額內含";
+                            break;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(lb_gd_currencyRate.Text.Trim()))
+                {
+                    lb_gd_currencyRate.Text = this.lb_currencyRate.Text;
+                }
+            }
+        }
+    }
+}

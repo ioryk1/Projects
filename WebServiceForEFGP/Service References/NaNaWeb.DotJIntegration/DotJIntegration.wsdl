@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://util.nana.dsc.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://webservice.nana.dsc.com/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://exception.sysintegration.services.nana.dsc.com" xmlns:tns2="http://tool_agent.services.nana.dsc.com" xmlns:impl="http://webservice.nana.dsc.com/" targetNamespace="http://webservice.nana.dsc.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://util.nana.dsc.com">
+      <xsd:import namespace="http://tool_agent.services.nana.dsc.com" />
+      <xsd:import namespace="http://exception.sysintegration.services.nana.dsc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="BaseException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tool_agent.services.nana.dsc.com">
+      <xsd:import namespace="http://util.nana.dsc.com" />
+      <xsd:import namespace="http://exception.sysintegration.services.nana.dsc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="FailToInvokeAppException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:BaseException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://exception.sysintegration.services.nana.dsc.com">
+      <xsd:import namespace="http://tool_agent.services.nana.dsc.com" />
+      <xsd:import namespace="http://util.nana.dsc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="SysWebServiceException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:FailToInvokeAppException">
+            <xsd:sequence>
+              <xsd:element name="xmlMessage" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TiptopCallOutException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:SysWebServiceException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TiptopCallInException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:SysWebServiceException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TiptopCallInException">
+    <wsdl:part name="fault" type="tns1:TiptopCallInException" />
+  </wsdl:message>
+  <wsdl:message name="runMethodResponse">
+    <wsdl:part name="runMethodReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="runMethodRequest">
+    <wsdl:part name="pInput" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="invokeDotJConfirmServiceResponse">
+    <wsdl:part name="invokeDotJConfirmServiceReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="invokeDotJProcessResetServiceResponse">
+    <wsdl:part name="invokeDotJProcessResetServiceReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="invokeDotJProcessResetServiceRequest">
+    <wsdl:part name="pInput" type="xsd:string" />
+    <wsdl:part name="pProcessSerialNumber" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="invokeDotJConfirmServiceRequest">
+    <wsdl:part name="pInput" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="TiptopCallOutException">
+    <wsdl:part name="fault" type="tns1:TiptopCallOutException" />
+  </wsdl:message>
+  <wsdl:portType name="DotJIntegration">
+    <wsdl:operation name="runMethod" parameterOrder="pInput">
+      <wsdl:input name="runMethodRequest" message="impl:runMethodRequest" />
+      <wsdl:output name="runMethodResponse" message="impl:runMethodResponse" />
+      <wsdl:fault name="TiptopCallInException" message="impl:TiptopCallInException" />
+      <wsdl:fault name="TiptopCallOutException" message="impl:TiptopCallOutException" />
+    </wsdl:operation>
+    <wsdl:operation name="invokeDotJProcessResetService" parameterOrder="pInput pProcessSerialNumber">
+      <wsdl:input name="invokeDotJProcessResetServiceRequest" message="impl:invokeDotJProcessResetServiceRequest" />
+      <wsdl:output name="invokeDotJProcessResetServiceResponse" message="impl:invokeDotJProcessResetServiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="invokeDotJConfirmService" parameterOrder="pInput">
+      <wsdl:input name="invokeDotJConfirmServiceRequest" message="impl:invokeDotJConfirmServiceRequest" />
+      <wsdl:output name="invokeDotJConfirmServiceResponse" message="impl:invokeDotJConfirmServiceResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DotJIntegrationSoapBinding" type="impl:DotJIntegration">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="runMethod">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="runMethodRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="runMethodResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="TiptopCallInException">
+        <wsdlsoap:fault use="encoded" name="TiptopCallInException" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="TiptopCallOutException">
+        <wsdlsoap:fault use="encoded" name="TiptopCallOutException" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="invokeDotJProcessResetService">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="invokeDotJProcessResetServiceRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="invokeDotJProcessResetServiceResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeDotJConfirmService">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="invokeDotJConfirmServiceRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="invokeDotJConfirmServiceResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DotJIntegrationService">
+    <wsdl:port name="DotJIntegration" binding="impl:DotJIntegrationSoapBinding">
+      <wsdlsoap:address location="http://172.22.128.187:8086/NaNaWeb/services/DotJIntegration" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

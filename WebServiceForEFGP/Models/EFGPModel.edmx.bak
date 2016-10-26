@@ -1,0 +1,1760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NaNaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountItemTaxRateSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="applyTypeKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="itemName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="accountName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="accountNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="taxRate" Type="float" Nullable="false" />
+          <Property Name="foreignIncomeTaxRate" Type="float" Nullable="false" />
+          <Property Name="localIncomeTaxRate" Type="float" Nullable="false" />
+          <Property Name="secondNHITaxRate" Type="float" Nullable="false" />
+          <Property Name="memo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="needCountersign" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CostApplyForm">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="ddlNotWithhold_paymentCertificateCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtRetailId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_paymentItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_formatCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlCurrencySelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlPaymentGroupSelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_belongDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlPaymentTypeSelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlNotWithhold_paymentCertificateCategorySelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_belongDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_sellerTaxId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPayeeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_taxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_incomeTaxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_paymentCertificateAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateNotWithhold_paymentCertificate" Type="datetime" />
+          <Property Name="txtFormNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_belongDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlPaymentCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_secondNHITaxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="btnRetailName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlPaymentGroup" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPaymentTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_formatCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_telSalesMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_belongDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_NTDAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_statementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_telSalesMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="txtWithhold_accountItem" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlApplyCategorySelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioIsCitizen" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlCurrency" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_paymentCertificateNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_taxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidApplyManagerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_paymentAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioPaymentlbCertificate" Type="nvarchar" MaxLength="255" />
+          <Property Name="processSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_paymentMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_accountItem" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlPaymentType" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlPaymentConditionSelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPayeeId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_paymentMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_paymentItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidCountersignManagerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_statementAmountWithoutTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_originCurrencyAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_secondNHIAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtCurrencyRate" Type="float" />
+          <Property Name="txtApplyDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlApplyCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlWithhold_originCurrency" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="isNeedCountersign" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_paymentCertificateWithoutTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_taxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDicisionCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidHasDefaultValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_accountItemNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_accountItemNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidIsNeedCountersign" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidAccountingUserId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_accountItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_accountItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBatchNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_paymentMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_telSalesMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_paymentMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtWithhold_telSalesMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidApplyDivsion" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_sum_taxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_sum_statementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtNotWithhold_sum_certificateAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlWithhold_withholdType" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidNotWithhold_accountItemTaxRateSetting_code" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidWithhold_accountItemTaxRateSetting_code" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidWithhold_secondNHIOriAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidWithhold_OriAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidWithhold_paymentOriAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidWithhold_taxOriAmount" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CostApplyForm_gridNotWithholdList">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gd_accountItemNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_sort" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentCertificateWithoutTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_taxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_statementAmountWithoutTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_statementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_belongDepartment" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentCertificateAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_sellerTaxId" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_formatCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_taxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_datePaymentCertificate" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentCertificateCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentCertificateNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_telSalesMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_accountItem" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_telSalesMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_accountItemTaxRateSettingCode" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CostApplyForm_gridWithholdList">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gd_secondNHIAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_accountItemNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_sort" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_originCurrency" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_belongDepartment" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_formatCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_taxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_originCurrencyAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_secondNHITaxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_telSalesMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_accountItem" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_incomeTaxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_NTDAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_telSalesMemoName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_withholdType" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_accountItemTaxRateSettingCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_paymentOriAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_taxOriAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_secondNHIOriAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_oriAmount" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="EmployeeTransportationSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransId" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormFieldsSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="key" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" Nullable="false" />
+          <Property Name="formID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="extData1" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="extData2" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="custOptions" Type="bit" Nullable="false" />
+          <Property Name="custNotify" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormOptionsSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="formName" Type="nvarchar" MaxLength="50" />
+          <Property Name="text" Type="nvarchar" MaxLength="50" />
+          <Property Name="value" Type="nvarchar" MaxLength="50" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="sort" Type="int" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
+          <Property Name="fieldName" Type="nvarchar" MaxLength="50" />
+          <Property Name="fieldID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="needKeyIn" Type="bit" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" Nullable="false" />
+          <Property Name="formOID" Type="varchar" MaxLength="10" />
+          <Property Name="formNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InvoiceRuleSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceFormatNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateStartStr" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DateEndStr" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="InvoicePerfixEnglish" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MSG001">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="dateSendStart" Type="datetime" />
+          <Property Name="hidRadioMsgSource" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioMsgSource" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlSendSystem" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgCount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgMemo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyId" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioSendType" Type="nvarchar" MaxLength="255" />
+          <Property Name="dateSendEnd" Type="datetime" />
+          <Property Name="dateSend" Type="datetime" />
+          <Property Name="txtApplyDepId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidRadioSendLevel" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioMsgType" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDdlMsgCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgContent" Type="nvarchar" MaxLength="255" />
+          <Property Name="chkCPDelegate" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplicant" Type="nvarchar" MaxLength="255" />
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="timeSendStart" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidRadioSendType" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPointName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtlITDelegateOther" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgTypeOther" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlMsgCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidChbExcludeCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="processSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyDepart" Type="nvarchar" MaxLength="255" />
+          <Property Name="chbExcludeCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="timeSendEnd" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgCondition" Type="nvarchar" MaxLength="500" />
+          <Property Name="radioSendLevel" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepId" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidRadioMsgType" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDateSend" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyDepName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidCPDelegate" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtSendRegion" Type="nvarchar" MaxLength="255" />
+          <Property Name="timeSend" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtMsgTestSendList" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPointID" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidTimeSend" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlITDelegateOption" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidIsExcludeAllCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidApplyDivsion" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidSendPhoneNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidITDelegateOption" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidIsContentModify" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidApprovedEmp" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidOriMsgList" Type="nvarchar(max)" />
+          <Property Name="hidLegalEmpGroupID" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidSubject" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidIsFormCreate" Type="nvarchar(max)" />
+          <Property Name="hidApplyerSelectMsgCategory" Type="nvarchar(max)" />
+          <Property Name="txtPreview_after" Type="nvarchar(max)" />
+          <Property Name="hidApplyerCheckedBlockList" Type="nvarchar(max)" />
+          <Property Name="txtPreview_before" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MSG001_gridMsg">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gd_segment" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_point_address" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_src" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_sort" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_type" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_point_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_memo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_list" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_list_count" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_send_type" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_point_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_title" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_date_send" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_time_send" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_sales" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_point_region" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_condition" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_content" Type="nvarchar(max)" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OilTransportationSubsidy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subsidyPrice" Type="float" Nullable="false" />
+          <Property Name="dateStart" Type="datetime" Nullable="false" />
+          <Property Name="dateEnd" Type="datetime" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OutsideCostApplyForm">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="txtPublicTrans_sumTaxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtRetailId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicTrans_sumStatementWithoutTaxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPaymentCertificatePrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="DatePaymentCertificate" Type="datetime" />
+          <Property Name="ddlPublicTransportation" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicTrans_sumPaymentCertificateWithoutTaxAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtTaxPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicBizDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidTransferType" Type="nvarchar" MaxLength="255" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPayeeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBizTripLocationEnd" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBatchNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPrivateTransportation" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPaymentCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPubicLocationEnd" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPaymentCertificateWithoutTaxPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioPrivateTrans_subsidyLimit" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtAccountItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDicisionCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPubicLocationStart" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_sumStatementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPaymentCertificateNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_subsidyLimitAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicVATNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPublicTransportation" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPaymentType" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPaymentTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioPrivateTrans_earnMileageSubsidy" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtTotalAmount_etagPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPaymentGroup" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidHasDefaultValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBelongDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtAccountItemNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBelongDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicTrans_sumStatementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioTransferType" Type="nvarchar" MaxLength="255" />
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="hidDdlApplyCategorySelected" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_sumStatementWithoutAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateBizTrip" Type="datetime" />
+          <Property Name="ddlPrivateTransportation" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtTotalAmount_oilTransportationSubsidyPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBizTripLocationStart" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicTrans_sumPaymentCertificateAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBizTripDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtStatementAmountWithoutTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtRetailName" Type="nvarchar" MaxLength="255" />
+          <Property Name="processSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPublicTaxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtStatementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPayeeId" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidCountersignManagerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtOilTransportationSubsidyPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidApplyDivsion" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtEtagPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidAccountingUserId" Type="nvarchar" MaxLength="255" />
+          <Property Name="ddlApplyCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_earnMileageSubsidyAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidIsNeedCountersign" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtEarnMileage" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtSumTotalPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_sumETagPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_sumPaymentCertificatePrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtVATNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtPrivateTrans_sumTaxPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidFormatCode" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OutsideCostApplyForm_gdPrivateTrans">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gd_no" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_EtagPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_BizTripLocationEnd" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_OilTransportationSubsidyPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_EarnMileage" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_BizTripDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_DateBizTrip" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_BizTripLocationStart" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PrivateTransportation" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OutsideCostApplyForm_gdStatement">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gd_no" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_AccountItemNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PublicTransportation" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PaymentCertificateNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PaymentCertificateWithoutTaxPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PaymentCertificatePrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_AccountItemName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_BelongDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PublicTaxRate" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_StatementAmountWithoutTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PubicLocationStart" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_TransferType" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PubicLocationEnd" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_StatementAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_TaxPrice" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PublicVATNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_BelongDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_PublicBizDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_DatePaymentCertificate_txt" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="gd_formatCode" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TempPaymentApplyForm">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="txtDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidInterimPaymentAmount" Type="float" />
+          <Property Name="txtApplyUnitHandlingId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepartmentName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerExtNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="radioPaymentType" Type="nvarchar" MaxLength="255" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBatchNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtRecipient" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyUnitHandlingName" Type="nvarchar" MaxLength="255" />
+          <Property Name="processSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBankBranchName" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidDicisionCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtIssuerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidAccountEmpNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBankName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtInterimPaymentAmount" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidHasDefaultValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerId" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateRequire" Type="datetime" />
+          <Property Name="txtIssuerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtBankAccountNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="txtApplyerDepartmentId" Type="nvarchar" MaxLength="255" />
+          <Property Name="formSerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPaymentCondition" Type="nvarchar" MaxLength="255" />
+          <Property Name="hidPaymentGroup" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TransportationSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VAT" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="taxRate" Type="float" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" Nullable="false" />
+          <Property Name="isNeedCertificateNo" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NaNa.dbo.ViewEmployeeLightInfo' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="ViewEmployeeLightInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="100" />
+          <Property Name="phoneNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="ldapid" Type="nvarchar" MaxLength="100" />
+          <Property Name="departmentName" Type="nvarchar" MaxLength="100" />
+          <Property Name="departmentID" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'NaNa.dbo.ViewEmployeeTransportationSetting' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="ViewEmployeeTransportationSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EmpNo" />
+            <PropertyRef Name="TransType" />
+            <PropertyRef Name="TransId" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="organizationUnitName" Type="nvarchar" MaxLength="100" />
+          <Property Name="functionDefinitionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TransType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransId" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="NaNaModelStoreContainer">
+          <EntitySet Name="AccountItemTaxRateSetting" EntityType="Self.AccountItemTaxRateSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostApplyForm" EntityType="Self.CostApplyForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostApplyForm_gridNotWithholdList" EntityType="Self.CostApplyForm_gridNotWithholdList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostApplyForm_gridWithholdList" EntityType="Self.CostApplyForm_gridWithholdList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeTransportationSetting" EntityType="Self.EmployeeTransportationSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFieldsSetting" EntityType="Self.FormFieldsSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormOptionsSetting" EntityType="Self.FormOptionsSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceRuleSetting" EntityType="Self.InvoiceRuleSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MSG001" EntityType="Self.MSG001" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MSG001_gridMsg" EntityType="Self.MSG001_gridMsg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilTransportationSubsidy" EntityType="Self.OilTransportationSubsidy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutsideCostApplyForm" EntityType="Self.OutsideCostApplyForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutsideCostApplyForm_gdPrivateTrans" EntityType="Self.OutsideCostApplyForm_gdPrivateTrans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutsideCostApplyForm_gdStatement" EntityType="Self.OutsideCostApplyForm_gdStatement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TempPaymentApplyForm" EntityType="Self.TempPaymentApplyForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransportationSetting" EntityType="Self.TransportationSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewEmployeeLightInfo" EntityType="Self.ViewEmployeeLightInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewEmployeeLightInfo].[ID] AS [ID], 
+    [ViewEmployeeLightInfo].[userName] AS [userName], 
+    [ViewEmployeeLightInfo].[phoneNumber] AS [phoneNumber], 
+    [ViewEmployeeLightInfo].[ldapid] AS [ldapid], 
+    [ViewEmployeeLightInfo].[departmentName] AS [departmentName], 
+    [ViewEmployeeLightInfo].[departmentID] AS [departmentID]
+    FROM [dbo].[ViewEmployeeLightInfo] AS [ViewEmployeeLightInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewEmployeeTransportationSetting" EntityType="Self.ViewEmployeeTransportationSetting" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewEmployeeTransportationSetting].[Id] AS [Id], 
+    [ViewEmployeeTransportationSetting].[organizationUnitName] AS [organizationUnitName], 
+    [ViewEmployeeTransportationSetting].[functionDefinitionName] AS [functionDefinitionName], 
+    [ViewEmployeeTransportationSetting].[EmpNo] AS [EmpNo], 
+    [ViewEmployeeTransportationSetting].[userName] AS [userName], 
+    [ViewEmployeeTransportationSetting].[TransType] AS [TransType], 
+    [ViewEmployeeTransportationSetting].[TransId] AS [TransId]
+    FROM [dbo].[ViewEmployeeTransportationSetting] AS [ViewEmployeeTransportationSetting]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NaNaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MSG001">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="dateSendStart" Type="DateTime" Precision="3" />
+          <Property Name="hidRadioMsgSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioMsgSource" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlSendSystem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgCount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioSendType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dateSendEnd" Type="DateTime" Precision="3" />
+          <Property Name="dateSend" Type="DateTime" Precision="3" />
+          <Property Name="txtApplyDepId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidRadioSendLevel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioMsgType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlMsgCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgContent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chkCPDelegate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplicant" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="timeSendStart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidRadioSendType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPointName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtlITDelegateOther" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgTypeOther" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlMsgCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidChbExcludeCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="processSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyDepart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chbExcludeCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="timeSendEnd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgCondition" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="radioSendLevel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidRadioMsgType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDateSend" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyDepName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidCPDelegate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtSendRegion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="timeSend" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtMsgTestSendList" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPointID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidTimeSend" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlITDelegateOption" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidIsExcludeAllCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidApplyDivsion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidSendPhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidITDelegateOption" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidIsContentModify" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidApprovedEmp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidOriMsgList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hidLegalEmpGroupID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidSubject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidIsFormCreate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hidApplyerSelectMsgCategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="txtPreview_after" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hidApplyerCheckedBlockList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="txtPreview_before" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MSG001_gridMsg">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gd_segment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_point_address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_src" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_sort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_point_id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_memo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_list" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_list_count" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_send_type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_point_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_date_send" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_time_send" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_sales" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_point_region" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_condition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="NaNaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MSG001" EntityType="Self.MSG001" />
+          <EntitySet Name="MSG001_gridMsg" EntityType="Self.MSG001_gridMsg" />
+          <EntitySet Name="FormFieldsSetting" EntityType="NaNaModel.FormFieldsSetting" />
+          <EntitySet Name="FormOptionsSetting" EntityType="NaNaModel.FormOptionsSetting" />
+          <EntitySet Name="ViewEmployeeLightInfo" EntityType="NaNaModel.ViewEmployeeLightInfo" />
+          <EntitySet Name="AccountItemTaxRateSetting" EntityType="NaNaModel.AccountItemTaxRateSetting" />
+          <EntitySet Name="CostApplyForm" EntityType="NaNaModel.CostApplyForm" />
+          <EntitySet Name="CostApplyForm_gridNotWithholdList" EntityType="NaNaModel.CostApplyForm_gridNotWithholdList" />
+          <EntitySet Name="CostApplyForm_gridWithholdList" EntityType="NaNaModel.CostApplyForm_gridWithholdList" />
+          <EntitySet Name="TempPaymentApplyForm" EntityType="NaNaModel.TempPaymentApplyForm" />
+          <EntitySet Name="OutsideCostApplyForm" EntityType="NaNaModel.OutsideCostApplyForm" />
+          <EntitySet Name="OutsideCostApplyForm_gdPrivateTrans" EntityType="NaNaModel.OutsideCostApplyForm_gdPrivateTrans" />
+          <EntitySet Name="OutsideCostApplyForm_gdStatement" EntityType="NaNaModel.OutsideCostApplyForm_gdStatement" />
+          <EntitySet Name="EmployeeTransportationSetting" EntityType="NaNaModel.EmployeeTransportationSetting" />
+          <EntitySet Name="OilTransportationSubsidy" EntityType="NaNaModel.OilTransportationSubsidy" />
+          <EntitySet Name="InvoiceRuleSetting" EntityType="NaNaModel.InvoiceRuleSetting" />
+          <EntitySet Name="TransportationSetting" EntityType="NaNaModel.TransportationSetting" />
+          <EntitySet Name="ViewEmployeeTransportationSetting" EntityType="NaNaModel.ViewEmployeeTransportationSetting" />
+        </EntityContainer>
+        <EntityType Name="FormFieldsSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="key" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" Nullable="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="formID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="extData1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="extData2" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="custOptions" Type="Boolean" Nullable="false" />
+          <Property Name="custNotify" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormOptionsSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="formName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" Nullable="false" />
+          <Property Name="fieldName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fieldID" Type="Guid" Nullable="false" />
+          <Property Name="needKeyIn" Type="Boolean" Nullable="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="formOID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="formNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ViewEmployeeLightInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ldapid" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="departmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="departmentID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AccountItemTaxRateSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itemName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="accountName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="accountNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="taxRate" Type="Double" Nullable="false" />
+          <Property Name="foreignIncomeTaxRate" Type="Double" Nullable="false" />
+          <Property Name="localIncomeTaxRate" Type="Double" Nullable="false" />
+          <Property Name="secondNHITaxRate" Type="Double" Nullable="false" />
+          <Property Name="memo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" Nullable="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="applyTypeKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="needCountersign" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CostApplyForm">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="ddlNotWithhold_paymentCertificateCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtRetailId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_paymentItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_formatCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlCurrencySelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlPaymentGroupSelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_belongDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlPaymentTypeSelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlNotWithhold_paymentCertificateCategorySelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_belongDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_sellerTaxId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPayeeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_taxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_incomeTaxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_paymentCertificateAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateNotWithhold_paymentCertificate" Type="DateTime" Precision="3" />
+          <Property Name="txtFormNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_belongDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlPaymentCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_secondNHITaxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="btnRetailName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlPaymentGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPaymentTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_formatCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_telSalesMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_belongDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_NTDAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_statementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_telSalesMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_accountItem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlApplyCategorySelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioIsCitizen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlCurrency" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_paymentCertificateNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_taxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidApplyManagerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_paymentAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioPaymentlbCertificate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="processSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_paymentMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_accountItem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlPaymentType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlPaymentConditionSelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPayeeId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_paymentMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_paymentItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidCountersignManagerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_statementAmountWithoutTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_originCurrencyAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_secondNHIAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtCurrencyRate" Type="Double" />
+          <Property Name="txtApplyDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlApplyCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlWithhold_originCurrency" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="isNeedCountersign" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_paymentCertificateWithoutTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_taxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDicisionCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidHasDefaultValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_accountItemNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_accountItemNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidIsNeedCountersign" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidAccountingUserId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_accountItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_accountItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBatchNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_paymentMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_telSalesMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_paymentMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtWithhold_telSalesMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidApplyDivsion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_sum_taxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_sum_statementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtNotWithhold_sum_certificateAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlWithhold_withholdType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidNotWithhold_accountItemTaxRateSetting_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidWithhold_accountItemTaxRateSetting_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidWithhold_secondNHIOriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidWithhold_OriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidWithhold_paymentOriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidWithhold_taxOriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CostApplyForm_gridNotWithholdList">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_accountItemNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_sort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentCertificateWithoutTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_taxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_statementAmountWithoutTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_statementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_belongDepartment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentCertificateAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_sellerTaxId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_formatCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_taxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_datePaymentCertificate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentCertificateCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentCertificateNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_telSalesMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_accountItem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_telSalesMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_accountItemTaxRateSettingCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CostApplyForm_gridWithholdList">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_secondNHIAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_accountItemNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_sort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_originCurrency" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_belongDepartment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_formatCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_taxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_originCurrencyAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_secondNHITaxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_telSalesMemo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_accountItem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_incomeTaxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_NTDAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_telSalesMemoName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_withholdType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_accountItemTaxRateSettingCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_paymentOriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_taxOriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_secondNHIOriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_oriAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TempPaymentApplyForm">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidInterimPaymentAmount" Type="Double" />
+          <Property Name="txtApplyUnitHandlingId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioPaymentType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBatchNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtRecipient" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyUnitHandlingName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="processSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBankBranchName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDicisionCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidAccountEmpNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBankName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtInterimPaymentAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidHasDefaultValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateRequire" Type="DateTime" Precision="3" />
+          <Property Name="txtIssuerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBankAccountNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPaymentCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPaymentGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OutsideCostApplyForm">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="txtPublicTrans_sumTaxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtRetailId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicTrans_sumStatementWithoutTaxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPaymentCertificatePrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DatePaymentCertificate" Type="DateTime" Precision="3" />
+          <Property Name="ddlPublicTransportation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicTrans_sumPaymentCertificateWithoutTaxAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtTaxPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicBizDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerExtNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidTransferType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPayeeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBizTripLocationEnd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBatchNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPrivateTransportation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPaymentCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPubicLocationEnd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPaymentCertificateWithoutTaxPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioPrivateTrans_subsidyLimit" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtAccountItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDicisionCondition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPubicLocationStart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_sumStatementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPaymentCertificateNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_subsidyLimitAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicVATNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPublicTransportation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPaymentType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPaymentTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioPrivateTrans_earnMileageSubsidy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtTotalAmount_etagPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidPaymentGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidHasDefaultValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBelongDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtAccountItemNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBelongDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicTrans_sumStatementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="radioTransferType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidDdlApplyCategorySelected" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_sumStatementWithoutAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateBizTrip" Type="DateTime" Precision="3" />
+          <Property Name="ddlPrivateTransportation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtTotalAmount_oilTransportationSubsidyPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBizTripLocationStart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicTrans_sumPaymentCertificateAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtBizTripDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtStatementAmountWithoutTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtRetailName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="processSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPublicTaxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtStatementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPayeeId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidCountersignManagerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtOilTransportationSubsidyPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidApplyDivsion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtEtagPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidAccountingUserId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ddlApplyCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_earnMileageSubsidyAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtIssuerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidIsNeedCountersign" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtEarnMileage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtApplyerDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtSumTotalPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_sumETagPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_sumPaymentCertificatePrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtVATNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="txtPrivateTrans_sumTaxPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="hidFormatCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OutsideCostApplyForm_gdPrivateTrans">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_no" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_EtagPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_BizTripLocationEnd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_OilTransportationSubsidyPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_EarnMileage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_BizTripDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_DateBizTrip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_BizTripLocationStart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PrivateTransportation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OutsideCostApplyForm_gdStatement">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_no" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_AccountItemNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PublicTransportation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PaymentCertificateNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PaymentCertificateWithoutTaxPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PaymentCertificatePrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_AccountItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_BelongDepartmentId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PublicTaxRate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_StatementAmountWithoutTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PubicLocationStart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_TransferType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PubicLocationEnd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_StatementAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_TaxPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PublicVATNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_BelongDepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_PublicBizDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_DatePaymentCertificate_txt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="formSerialNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gd_formatCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EmployeeTransportationSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransId" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OilTransportationSubsidy">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subsidyPrice" Type="Double" Nullable="false" />
+          <Property Name="dateStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="InvoiceRuleSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceFormatNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateStartStr" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DateEndStr" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InvoicePerfixEnglish" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TransportationSetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VAT" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="taxRate" Type="Double" Nullable="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isNeedCertificateNo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ViewEmployeeTransportationSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EmpNo" />
+            <PropertyRef Name="TransType" />
+            <PropertyRef Name="TransId" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="EmpNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TransType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransId" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="organizationUnitName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="functionDefinitionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NaNaModelStoreContainer" CdmEntityContainer="NaNaEntities">
+          <EntitySetMapping Name="MSG001">
+            <EntityTypeMapping TypeName="NaNaModel.MSG001">
+              <MappingFragment StoreEntitySet="MSG001">
+                <ScalarProperty Name="txtPreview_before" ColumnName="txtPreview_before" />
+                <ScalarProperty Name="hidApplyerCheckedBlockList" ColumnName="hidApplyerCheckedBlockList" />
+                <ScalarProperty Name="txtPreview_after" ColumnName="txtPreview_after" />
+                <ScalarProperty Name="hidApplyerSelectMsgCategory" ColumnName="hidApplyerSelectMsgCategory" />
+                <ScalarProperty Name="hidIsFormCreate" ColumnName="hidIsFormCreate" />
+                <ScalarProperty Name="hidSubject" ColumnName="hidSubject" />
+                <ScalarProperty Name="hidLegalEmpGroupID" ColumnName="hidLegalEmpGroupID" />
+                <ScalarProperty Name="hidOriMsgList" ColumnName="hidOriMsgList" />
+                <ScalarProperty Name="hidApprovedEmp" ColumnName="hidApprovedEmp" />
+                <ScalarProperty Name="hidIsContentModify" ColumnName="hidIsContentModify" />
+                <ScalarProperty Name="hidITDelegateOption" ColumnName="hidITDelegateOption" />
+                <ScalarProperty Name="hidSendPhoneNumber" ColumnName="hidSendPhoneNumber" />
+                <ScalarProperty Name="dateSendStart" ColumnName="dateSendStart" />
+                <ScalarProperty Name="hidRadioMsgSource" ColumnName="hidRadioMsgSource" />
+                <ScalarProperty Name="radioMsgSource" ColumnName="radioMsgSource" />
+                <ScalarProperty Name="ddlSendSystem" ColumnName="ddlSendSystem" />
+                <ScalarProperty Name="txtIssuerExtNo" ColumnName="txtIssuerExtNo" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="txtApplyAddress" ColumnName="txtApplyAddress" />
+                <ScalarProperty Name="txtMsgCount" ColumnName="txtMsgCount" />
+                <ScalarProperty Name="txtMsgMemo" ColumnName="txtMsgMemo" />
+                <ScalarProperty Name="txtApplyId" ColumnName="txtApplyId" />
+                <ScalarProperty Name="radioSendType" ColumnName="radioSendType" />
+                <ScalarProperty Name="dateSendEnd" ColumnName="dateSendEnd" />
+                <ScalarProperty Name="dateSend" ColumnName="dateSend" />
+                <ScalarProperty Name="txtApplyDepId" ColumnName="txtApplyDepId" />
+                <ScalarProperty Name="txtIssuerDepName" ColumnName="txtIssuerDepName" />
+                <ScalarProperty Name="hidRadioSendLevel" ColumnName="hidRadioSendLevel" />
+                <ScalarProperty Name="radioMsgType" ColumnName="radioMsgType" />
+                <ScalarProperty Name="hidDdlMsgCategory" ColumnName="hidDdlMsgCategory" />
+                <ScalarProperty Name="txtApplyName" ColumnName="txtApplyName" />
+                <ScalarProperty Name="txtMsgContent" ColumnName="txtMsgContent" />
+                <ScalarProperty Name="chkCPDelegate" ColumnName="chkCPDelegate" />
+                <ScalarProperty Name="txtApplicant" ColumnName="txtApplicant" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="timeSendStart" ColumnName="timeSendStart" />
+                <ScalarProperty Name="hidRadioSendType" ColumnName="hidRadioSendType" />
+                <ScalarProperty Name="txtPointName" ColumnName="txtPointName" />
+                <ScalarProperty Name="txtlITDelegateOther" ColumnName="txtlITDelegateOther" />
+                <ScalarProperty Name="txtMsgTypeOther" ColumnName="txtMsgTypeOther" />
+                <ScalarProperty Name="txtApplyExtNo" ColumnName="txtApplyExtNo" />
+                <ScalarProperty Name="ddlMsgCategory" ColumnName="ddlMsgCategory" />
+                <ScalarProperty Name="hidChbExcludeCondition" ColumnName="hidChbExcludeCondition" />
+                <ScalarProperty Name="processSerialNumber" ColumnName="processSerialNumber" />
+                <ScalarProperty Name="txtMsgTitle" ColumnName="txtMsgTitle" />
+                <ScalarProperty Name="txtApplyDepart" ColumnName="txtApplyDepart" />
+                <ScalarProperty Name="chbExcludeCondition" ColumnName="chbExcludeCondition" />
+                <ScalarProperty Name="timeSendEnd" ColumnName="timeSendEnd" />
+                <ScalarProperty Name="txtMsgCondition" ColumnName="txtMsgCondition" />
+                <ScalarProperty Name="radioSendLevel" ColumnName="radioSendLevel" />
+                <ScalarProperty Name="txtIssuerId" ColumnName="txtIssuerId" />
+                <ScalarProperty Name="txtIssuerDepId" ColumnName="txtIssuerDepId" />
+                <ScalarProperty Name="hidRadioMsgType" ColumnName="hidRadioMsgType" />
+                <ScalarProperty Name="hidDateSend" ColumnName="hidDateSend" />
+                <ScalarProperty Name="txtApplyDepName" ColumnName="txtApplyDepName" />
+                <ScalarProperty Name="hidCPDelegate" ColumnName="hidCPDelegate" />
+                <ScalarProperty Name="txtSendRegion" ColumnName="txtSendRegion" />
+                <ScalarProperty Name="timeSend" ColumnName="timeSend" />
+                <ScalarProperty Name="txtMsgTestSendList" ColumnName="txtMsgTestSendList" />
+                <ScalarProperty Name="txtPointID" ColumnName="txtPointID" />
+                <ScalarProperty Name="txtApplyDate" ColumnName="txtApplyDate" />
+                <ScalarProperty Name="hidTimeSend" ColumnName="hidTimeSend" />
+                <ScalarProperty Name="ddlITDelegateOption" ColumnName="ddlITDelegateOption" />
+                <ScalarProperty Name="txtIssuerName" ColumnName="txtIssuerName" />
+                <ScalarProperty Name="hidIsExcludeAllCondition" ColumnName="hidIsExcludeAllCondition" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="hidApplyDivsion" ColumnName="hidApplyDivsion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSG001_gridMsg">
+            <EntityTypeMapping TypeName="NaNaModel.MSG001_gridMsg">
+              <MappingFragment StoreEntitySet="MSG001_gridMsg">
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="gd_segment" ColumnName="gd_segment" />
+                <ScalarProperty Name="gd_point_address" ColumnName="gd_point_address" />
+                <ScalarProperty Name="gd_src" ColumnName="gd_src" />
+                <ScalarProperty Name="gd_sort" ColumnName="gd_sort" />
+                <ScalarProperty Name="gd_type" ColumnName="gd_type" />
+                <ScalarProperty Name="gd_point_id" ColumnName="gd_point_id" />
+                <ScalarProperty Name="gd_memo" ColumnName="gd_memo" />
+                <ScalarProperty Name="gd_list" ColumnName="gd_list" />
+                <ScalarProperty Name="gd_list_count" ColumnName="gd_list_count" />
+                <ScalarProperty Name="gd_send_type" ColumnName="gd_send_type" />
+                <ScalarProperty Name="gd_point_name" ColumnName="gd_point_name" />
+                <ScalarProperty Name="gd_title" ColumnName="gd_title" />
+                <ScalarProperty Name="gd_date_send" ColumnName="gd_date_send" />
+                <ScalarProperty Name="gd_time_send" ColumnName="gd_time_send" />
+                <ScalarProperty Name="gd_sales" ColumnName="gd_sales" />
+                <ScalarProperty Name="gd_point_region" ColumnName="gd_point_region" />
+                <ScalarProperty Name="gd_condition" ColumnName="gd_condition" />
+                <ScalarProperty Name="gd_content" ColumnName="gd_content" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFieldsSetting">
+            <EntityTypeMapping TypeName="NaNaModel.FormFieldsSetting">
+              <MappingFragment StoreEntitySet="FormFieldsSetting">
+                <ScalarProperty Name="custNotify" ColumnName="custNotify" />
+                <ScalarProperty Name="custOptions" ColumnName="custOptions" />
+                <ScalarProperty Name="extData2" ColumnName="extData2" />
+                <ScalarProperty Name="extData1" ColumnName="extData1" />
+                <ScalarProperty Name="formID" ColumnName="formID" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="key" ColumnName="key" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormOptionsSetting">
+            <EntityTypeMapping TypeName="NaNaModel.FormOptionsSetting">
+              <MappingFragment StoreEntitySet="FormOptionsSetting">
+                <ScalarProperty Name="formNo" ColumnName="formNo" />
+                <ScalarProperty Name="formOID" ColumnName="formOID" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="needKeyIn" ColumnName="needKeyIn" />
+                <ScalarProperty Name="fieldID" ColumnName="fieldID" />
+                <ScalarProperty Name="fieldName" ColumnName="fieldName" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="formName" ColumnName="formName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewEmployeeLightInfo">
+            <EntityTypeMapping TypeName="NaNaModel.ViewEmployeeLightInfo">
+              <MappingFragment StoreEntitySet="ViewEmployeeLightInfo">
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+                <ScalarProperty Name="ldapid" ColumnName="ldapid" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountItemTaxRateSetting">
+            <EntityTypeMapping TypeName="NaNaModel.AccountItemTaxRateSetting">
+              <MappingFragment StoreEntitySet="AccountItemTaxRateSetting">
+                <ScalarProperty Name="needCountersign" ColumnName="needCountersign" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="applyTypeKey" ColumnName="applyTypeKey" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="memo" ColumnName="memo" />
+                <ScalarProperty Name="secondNHITaxRate" ColumnName="secondNHITaxRate" />
+                <ScalarProperty Name="localIncomeTaxRate" ColumnName="localIncomeTaxRate" />
+                <ScalarProperty Name="foreignIncomeTaxRate" ColumnName="foreignIncomeTaxRate" />
+                <ScalarProperty Name="taxRate" ColumnName="taxRate" />
+                <ScalarProperty Name="accountNo" ColumnName="accountNo" />
+                <ScalarProperty Name="accountName" ColumnName="accountName" />
+                <ScalarProperty Name="itemName" ColumnName="itemName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostApplyForm">
+            <EntityTypeMapping TypeName="NaNaModel.CostApplyForm">
+              <MappingFragment StoreEntitySet="CostApplyForm">
+                <ScalarProperty Name="hidWithhold_taxOriAmount" ColumnName="hidWithhold_taxOriAmount" />
+                <ScalarProperty Name="hidWithhold_paymentOriAmount" ColumnName="hidWithhold_paymentOriAmount" />
+                <ScalarProperty Name="hidWithhold_OriAmount" ColumnName="hidWithhold_OriAmount" />
+                <ScalarProperty Name="hidWithhold_secondNHIOriAmount" ColumnName="hidWithhold_secondNHIOriAmount" />
+                <ScalarProperty Name="hidWithhold_accountItemTaxRateSetting_code" ColumnName="hidWithhold_accountItemTaxRateSetting_code" />
+                <ScalarProperty Name="hidNotWithhold_accountItemTaxRateSetting_code" ColumnName="hidNotWithhold_accountItemTaxRateSetting_code" />
+                <ScalarProperty Name="ddlWithhold_withholdType" ColumnName="ddlWithhold_withholdType" />
+                <ScalarProperty Name="txtNotWithhold_sum_certificateAmount" ColumnName="txtNotWithhold_sum_certificateAmount" />
+                <ScalarProperty Name="txtNotWithhold_sum_statementAmount" ColumnName="txtNotWithhold_sum_statementAmount" />
+                <ScalarProperty Name="txtNotWithhold_sum_taxAmount" ColumnName="txtNotWithhold_sum_taxAmount" />
+                <ScalarProperty Name="hidApplyDivsion" ColumnName="hidApplyDivsion" />
+                <ScalarProperty Name="txtWithhold_telSalesMemoName" ColumnName="txtWithhold_telSalesMemoName" />
+                <ScalarProperty Name="txtNotWithhold_paymentMemoName" ColumnName="txtNotWithhold_paymentMemoName" />
+                <ScalarProperty Name="txtNotWithhold_telSalesMemoName" ColumnName="txtNotWithhold_telSalesMemoName" />
+                <ScalarProperty Name="txtWithhold_paymentMemoName" ColumnName="txtWithhold_paymentMemoName" />
+                <ScalarProperty Name="txtBatchNumber" ColumnName="txtBatchNumber" />
+                <ScalarProperty Name="txtWithhold_accountItemName" ColumnName="txtWithhold_accountItemName" />
+                <ScalarProperty Name="txtNotWithhold_accountItemName" ColumnName="txtNotWithhold_accountItemName" />
+                <ScalarProperty Name="hidAccountingUserId" ColumnName="hidAccountingUserId" />
+                <ScalarProperty Name="hidIsNeedCountersign" ColumnName="hidIsNeedCountersign" />
+                <ScalarProperty Name="txtNotWithhold_accountItemNo" ColumnName="txtNotWithhold_accountItemNo" />
+                <ScalarProperty Name="txtWithhold_accountItemNo" ColumnName="txtWithhold_accountItemNo" />
+                <ScalarProperty Name="hidHasDefaultValue" ColumnName="hidHasDefaultValue" />
+                <ScalarProperty Name="hidDicisionCondition" ColumnName="hidDicisionCondition" />
+                <ScalarProperty Name="txtNotWithhold_taxRate" ColumnName="txtNotWithhold_taxRate" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="txtApplyerDepartmentId" ColumnName="txtApplyerDepartmentId" />
+                <ScalarProperty Name="txtNotWithhold_Description" ColumnName="txtNotWithhold_Description" />
+                <ScalarProperty Name="txtNotWithhold_paymentCertificateWithoutTax" ColumnName="txtNotWithhold_paymentCertificateWithoutTax" />
+                <ScalarProperty Name="isNeedCountersign" ColumnName="isNeedCountersign" />
+                <ScalarProperty Name="txtIssuerName" ColumnName="txtIssuerName" />
+                <ScalarProperty Name="txtApplyerId" ColumnName="txtApplyerId" />
+                <ScalarProperty Name="ddlWithhold_originCurrency" ColumnName="ddlWithhold_originCurrency" />
+                <ScalarProperty Name="ddlApplyCategory" ColumnName="ddlApplyCategory" />
+                <ScalarProperty Name="txtApplyDate" ColumnName="txtApplyDate" />
+                <ScalarProperty Name="txtCurrencyRate" ColumnName="txtCurrencyRate" />
+                <ScalarProperty Name="txtWithhold_secondNHIAmount" ColumnName="txtWithhold_secondNHIAmount" />
+                <ScalarProperty Name="txtWithhold_originCurrencyAmount" ColumnName="txtWithhold_originCurrencyAmount" />
+                <ScalarProperty Name="txtNotWithhold_statementAmountWithoutTax" ColumnName="txtNotWithhold_statementAmountWithoutTax" />
+                <ScalarProperty Name="hidCountersignManagerId" ColumnName="hidCountersignManagerId" />
+                <ScalarProperty Name="txtNotWithhold_paymentItemName" ColumnName="txtNotWithhold_paymentItemName" />
+                <ScalarProperty Name="txtNotWithhold_paymentMemo" ColumnName="txtNotWithhold_paymentMemo" />
+                <ScalarProperty Name="txtPayeeId" ColumnName="txtPayeeId" />
+                <ScalarProperty Name="hidDdlPaymentConditionSelected" ColumnName="hidDdlPaymentConditionSelected" />
+                <ScalarProperty Name="txtIssuerId" ColumnName="txtIssuerId" />
+                <ScalarProperty Name="ddlPaymentType" ColumnName="ddlPaymentType" />
+                <ScalarProperty Name="txtNotWithhold_accountItem" ColumnName="txtNotWithhold_accountItem" />
+                <ScalarProperty Name="txtWithhold_paymentMemo" ColumnName="txtWithhold_paymentMemo" />
+                <ScalarProperty Name="processSerialNumber" ColumnName="processSerialNumber" />
+                <ScalarProperty Name="radioPaymentlbCertificate" ColumnName="radioPaymentlbCertificate" />
+                <ScalarProperty Name="txtWithhold_paymentAmount" ColumnName="txtWithhold_paymentAmount" />
+                <ScalarProperty Name="txtIssuerDepartmentId" ColumnName="txtIssuerDepartmentId" />
+                <ScalarProperty Name="hidApplyManagerId" ColumnName="hidApplyManagerId" />
+                <ScalarProperty Name="txtNotWithhold_taxAmount" ColumnName="txtNotWithhold_taxAmount" />
+                <ScalarProperty Name="txtNotWithhold_paymentCertificateNo" ColumnName="txtNotWithhold_paymentCertificateNo" />
+                <ScalarProperty Name="ddlCurrency" ColumnName="ddlCurrency" />
+                <ScalarProperty Name="txtApplyerDepartmentName" ColumnName="txtApplyerDepartmentName" />
+                <ScalarProperty Name="radioIsCitizen" ColumnName="radioIsCitizen" />
+                <ScalarProperty Name="hidDdlApplyCategorySelected" ColumnName="hidDdlApplyCategorySelected" />
+                <ScalarProperty Name="txtWithhold_accountItem" ColumnName="txtWithhold_accountItem" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="txtNotWithhold_telSalesMemo" ColumnName="txtNotWithhold_telSalesMemo" />
+                <ScalarProperty Name="txtNotWithhold_statementAmount" ColumnName="txtNotWithhold_statementAmount" />
+                <ScalarProperty Name="txtWithhold_NTDAmount" ColumnName="txtWithhold_NTDAmount" />
+                <ScalarProperty Name="txtNotWithhold_belongDepartmentId" ColumnName="txtNotWithhold_belongDepartmentId" />
+                <ScalarProperty Name="txtWithhold_telSalesMemo" ColumnName="txtWithhold_telSalesMemo" />
+                <ScalarProperty Name="txtWithhold_Description" ColumnName="txtWithhold_Description" />
+                <ScalarProperty Name="txtNotWithhold_formatCode" ColumnName="txtNotWithhold_formatCode" />
+                <ScalarProperty Name="txtPaymentTitle" ColumnName="txtPaymentTitle" />
+                <ScalarProperty Name="ddlPaymentGroup" ColumnName="ddlPaymentGroup" />
+                <ScalarProperty Name="btnRetailName" ColumnName="btnRetailName" />
+                <ScalarProperty Name="txtWithhold_secondNHITaxRate" ColumnName="txtWithhold_secondNHITaxRate" />
+                <ScalarProperty Name="ddlPaymentCondition" ColumnName="ddlPaymentCondition" />
+                <ScalarProperty Name="txtWithhold_belongDepartmentId" ColumnName="txtWithhold_belongDepartmentId" />
+                <ScalarProperty Name="txtFormNo" ColumnName="txtFormNo" />
+                <ScalarProperty Name="DateNotWithhold_paymentCertificate" ColumnName="DateNotWithhold_paymentCertificate" />
+                <ScalarProperty Name="txtNotWithhold_paymentCertificateAmount" ColumnName="txtNotWithhold_paymentCertificateAmount" />
+                <ScalarProperty Name="txtWithhold_incomeTaxRate" ColumnName="txtWithhold_incomeTaxRate" />
+                <ScalarProperty Name="txtWithhold_taxAmount" ColumnName="txtWithhold_taxAmount" />
+                <ScalarProperty Name="txtPayeeName" ColumnName="txtPayeeName" />
+                <ScalarProperty Name="txtApplyerName" ColumnName="txtApplyerName" />
+                <ScalarProperty Name="txtNotWithhold_sellerTaxId" ColumnName="txtNotWithhold_sellerTaxId" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="txtIssuerExtNo" ColumnName="txtIssuerExtNo" />
+                <ScalarProperty Name="txtWithhold_belongDepartmentName" ColumnName="txtWithhold_belongDepartmentName" />
+                <ScalarProperty Name="hidDdlNotWithhold_paymentCertificateCategorySelected" ColumnName="hidDdlNotWithhold_paymentCertificateCategorySelected" />
+                <ScalarProperty Name="txtIssuerDepartmentName" ColumnName="txtIssuerDepartmentName" />
+                <ScalarProperty Name="hidDdlPaymentTypeSelected" ColumnName="hidDdlPaymentTypeSelected" />
+                <ScalarProperty Name="txtApplyerExtNo" ColumnName="txtApplyerExtNo" />
+                <ScalarProperty Name="txtNotWithhold_belongDepartmentName" ColumnName="txtNotWithhold_belongDepartmentName" />
+                <ScalarProperty Name="hidDdlPaymentGroupSelected" ColumnName="hidDdlPaymentGroupSelected" />
+                <ScalarProperty Name="hidDdlCurrencySelected" ColumnName="hidDdlCurrencySelected" />
+                <ScalarProperty Name="txtWithhold_formatCode" ColumnName="txtWithhold_formatCode" />
+                <ScalarProperty Name="txtWithhold_paymentItemName" ColumnName="txtWithhold_paymentItemName" />
+                <ScalarProperty Name="txtRetailId" ColumnName="txtRetailId" />
+                <ScalarProperty Name="ddlNotWithhold_paymentCertificateCategory" ColumnName="ddlNotWithhold_paymentCertificateCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostApplyForm_gridNotWithholdList">
+            <EntityTypeMapping TypeName="NaNaModel.CostApplyForm_gridNotWithholdList">
+              <MappingFragment StoreEntitySet="CostApplyForm_gridNotWithholdList">
+                <ScalarProperty Name="gd_accountItemTaxRateSettingCode" ColumnName="gd_accountItemTaxRateSettingCode" />
+                <ScalarProperty Name="gd_telSalesMemoName" ColumnName="gd_telSalesMemoName" />
+                <ScalarProperty Name="gd_paymentMemoName" ColumnName="gd_paymentMemoName" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="gd_accountItem" ColumnName="gd_accountItem" />
+                <ScalarProperty Name="gd_telSalesMemo" ColumnName="gd_telSalesMemo" />
+                <ScalarProperty Name="gd_paymentCertificateNo" ColumnName="gd_paymentCertificateNo" />
+                <ScalarProperty Name="gd_paymentCertificateCategory" ColumnName="gd_paymentCertificateCategory" />
+                <ScalarProperty Name="gd_datePaymentCertificate" ColumnName="gd_datePaymentCertificate" />
+                <ScalarProperty Name="gd_taxAmount" ColumnName="gd_taxAmount" />
+                <ScalarProperty Name="gd_Description" ColumnName="gd_Description" />
+                <ScalarProperty Name="gd_formatCode" ColumnName="gd_formatCode" />
+                <ScalarProperty Name="gd_sellerTaxId" ColumnName="gd_sellerTaxId" />
+                <ScalarProperty Name="gd_paymentCertificateAmount" ColumnName="gd_paymentCertificateAmount" />
+                <ScalarProperty Name="gd_belongDepartment" ColumnName="gd_belongDepartment" />
+                <ScalarProperty Name="gd_statementAmount" ColumnName="gd_statementAmount" />
+                <ScalarProperty Name="gd_paymentMemo" ColumnName="gd_paymentMemo" />
+                <ScalarProperty Name="gd_statementAmountWithoutTax" ColumnName="gd_statementAmountWithoutTax" />
+                <ScalarProperty Name="gd_taxRate" ColumnName="gd_taxRate" />
+                <ScalarProperty Name="gd_paymentItemName" ColumnName="gd_paymentItemName" />
+                <ScalarProperty Name="gd_paymentCertificateWithoutTax" ColumnName="gd_paymentCertificateWithoutTax" />
+                <ScalarProperty Name="gd_sort" ColumnName="gd_sort" />
+                <ScalarProperty Name="gd_accountItemNo" ColumnName="gd_accountItemNo" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostApplyForm_gridWithholdList">
+            <EntityTypeMapping TypeName="NaNaModel.CostApplyForm_gridWithholdList">
+              <MappingFragment StoreEntitySet="CostApplyForm_gridWithholdList">
+                <ScalarProperty Name="gd_oriAmount" ColumnName="gd_oriAmount" />
+                <ScalarProperty Name="gd_secondNHIOriAmount" ColumnName="gd_secondNHIOriAmount" />
+                <ScalarProperty Name="gd_taxOriAmount" ColumnName="gd_taxOriAmount" />
+                <ScalarProperty Name="gd_paymentOriAmount" ColumnName="gd_paymentOriAmount" />
+                <ScalarProperty Name="gd_accountItemTaxRateSettingCode" ColumnName="gd_accountItemTaxRateSettingCode" />
+                <ScalarProperty Name="gd_withholdType" ColumnName="gd_withholdType" />
+                <ScalarProperty Name="gd_telSalesMemoName" ColumnName="gd_telSalesMemoName" />
+                <ScalarProperty Name="gd_paymentMemoName" ColumnName="gd_paymentMemoName" />
+                <ScalarProperty Name="gd_NTDAmount" ColumnName="gd_NTDAmount" />
+                <ScalarProperty Name="gd_incomeTaxRate" ColumnName="gd_incomeTaxRate" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="gd_accountItem" ColumnName="gd_accountItem" />
+                <ScalarProperty Name="gd_telSalesMemo" ColumnName="gd_telSalesMemo" />
+                <ScalarProperty Name="gd_secondNHITaxRate" ColumnName="gd_secondNHITaxRate" />
+                <ScalarProperty Name="gd_originCurrencyAmount" ColumnName="gd_originCurrencyAmount" />
+                <ScalarProperty Name="gd_taxAmount" ColumnName="gd_taxAmount" />
+                <ScalarProperty Name="gd_Description" ColumnName="gd_Description" />
+                <ScalarProperty Name="gd_formatCode" ColumnName="gd_formatCode" />
+                <ScalarProperty Name="gd_paymentAmount" ColumnName="gd_paymentAmount" />
+                <ScalarProperty Name="gd_belongDepartment" ColumnName="gd_belongDepartment" />
+                <ScalarProperty Name="gd_paymentMemo" ColumnName="gd_paymentMemo" />
+                <ScalarProperty Name="gd_originCurrency" ColumnName="gd_originCurrency" />
+                <ScalarProperty Name="gd_paymentItemName" ColumnName="gd_paymentItemName" />
+                <ScalarProperty Name="gd_sort" ColumnName="gd_sort" />
+                <ScalarProperty Name="gd_accountItemNo" ColumnName="gd_accountItemNo" />
+                <ScalarProperty Name="gd_secondNHIAmount" ColumnName="gd_secondNHIAmount" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempPaymentApplyForm">
+            <EntityTypeMapping TypeName="NaNaModel.TempPaymentApplyForm">
+              <MappingFragment StoreEntitySet="TempPaymentApplyForm">
+                <ScalarProperty Name="hidPaymentGroup" ColumnName="hidPaymentGroup" />
+                <ScalarProperty Name="hidPaymentCondition" ColumnName="hidPaymentCondition" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="txtApplyerDepartmentId" ColumnName="txtApplyerDepartmentId" />
+                <ScalarProperty Name="txtBankAccountNo" ColumnName="txtBankAccountNo" />
+                <ScalarProperty Name="txtIssuerName" ColumnName="txtIssuerName" />
+                <ScalarProperty Name="DateRequire" ColumnName="DateRequire" />
+                <ScalarProperty Name="txtApplyerId" ColumnName="txtApplyerId" />
+                <ScalarProperty Name="txtApplyDate" ColumnName="txtApplyDate" />
+                <ScalarProperty Name="hidHasDefaultValue" ColumnName="hidHasDefaultValue" />
+                <ScalarProperty Name="txtInterimPaymentAmount" ColumnName="txtInterimPaymentAmount" />
+                <ScalarProperty Name="txtBankName" ColumnName="txtBankName" />
+                <ScalarProperty Name="hidAccountEmpNo" ColumnName="hidAccountEmpNo" />
+                <ScalarProperty Name="txtIssuerId" ColumnName="txtIssuerId" />
+                <ScalarProperty Name="hidDicisionCondition" ColumnName="hidDicisionCondition" />
+                <ScalarProperty Name="txtBankBranchName" ColumnName="txtBankBranchName" />
+                <ScalarProperty Name="processSerialNumber" ColumnName="processSerialNumber" />
+                <ScalarProperty Name="txtApplyUnitHandlingName" ColumnName="txtApplyUnitHandlingName" />
+                <ScalarProperty Name="txtIssuerDepartmentId" ColumnName="txtIssuerDepartmentId" />
+                <ScalarProperty Name="txtRecipient" ColumnName="txtRecipient" />
+                <ScalarProperty Name="txtBatchNumber" ColumnName="txtBatchNumber" />
+                <ScalarProperty Name="txtApplyerName" ColumnName="txtApplyerName" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="radioPaymentType" ColumnName="radioPaymentType" />
+                <ScalarProperty Name="txtIssuerExtNo" ColumnName="txtIssuerExtNo" />
+                <ScalarProperty Name="txtIssuerDepartmentName" ColumnName="txtIssuerDepartmentName" />
+                <ScalarProperty Name="txtApplyerExtNo" ColumnName="txtApplyerExtNo" />
+                <ScalarProperty Name="txtApplyerDepartmentName" ColumnName="txtApplyerDepartmentName" />
+                <ScalarProperty Name="txtApplyUnitHandlingId" ColumnName="txtApplyUnitHandlingId" />
+                <ScalarProperty Name="hidInterimPaymentAmount" ColumnName="hidInterimPaymentAmount" />
+                <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutsideCostApplyForm">
+            <EntityTypeMapping TypeName="NaNaModel.OutsideCostApplyForm">
+              <MappingFragment StoreEntitySet="OutsideCostApplyForm">
+                <ScalarProperty Name="hidFormatCode" ColumnName="hidFormatCode" />
+                <ScalarProperty Name="txtPrivateTrans_sumTaxPrice" ColumnName="txtPrivateTrans_sumTaxPrice" />
+                <ScalarProperty Name="txtVATNo" ColumnName="txtVATNo" />
+                <ScalarProperty Name="txtPrivateTrans_sumPaymentCertificatePrice" ColumnName="txtPrivateTrans_sumPaymentCertificatePrice" />
+                <ScalarProperty Name="txtPrivateTrans_sumETagPrice" ColumnName="txtPrivateTrans_sumETagPrice" />
+                <ScalarProperty Name="txtSumTotalPrice" ColumnName="txtSumTotalPrice" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="txtApplyerDepartmentId" ColumnName="txtApplyerDepartmentId" />
+                <ScalarProperty Name="txtEarnMileage" ColumnName="txtEarnMileage" />
+                <ScalarProperty Name="hidIsNeedCountersign" ColumnName="hidIsNeedCountersign" />
+                <ScalarProperty Name="txtIssuerName" ColumnName="txtIssuerName" />
+                <ScalarProperty Name="txtPrivateTrans_earnMileageSubsidyAmount" ColumnName="txtPrivateTrans_earnMileageSubsidyAmount" />
+                <ScalarProperty Name="txtApplyerId" ColumnName="txtApplyerId" />
+                <ScalarProperty Name="ddlApplyCategory" ColumnName="ddlApplyCategory" />
+                <ScalarProperty Name="hidAccountingUserId" ColumnName="hidAccountingUserId" />
+                <ScalarProperty Name="txtApplyDate" ColumnName="txtApplyDate" />
+                <ScalarProperty Name="txtEtagPrice" ColumnName="txtEtagPrice" />
+                <ScalarProperty Name="hidApplyDivsion" ColumnName="hidApplyDivsion" />
+                <ScalarProperty Name="txtOilTransportationSubsidyPrice" ColumnName="txtOilTransportationSubsidyPrice" />
+                <ScalarProperty Name="hidCountersignManagerId" ColumnName="hidCountersignManagerId" />
+                <ScalarProperty Name="txtPayeeId" ColumnName="txtPayeeId" />
+                <ScalarProperty Name="txtStatementAmount" ColumnName="txtStatementAmount" />
+                <ScalarProperty Name="txtPublicTaxRate" ColumnName="txtPublicTaxRate" />
+                <ScalarProperty Name="txtIssuerId" ColumnName="txtIssuerId" />
+                <ScalarProperty Name="processSerialNumber" ColumnName="processSerialNumber" />
+                <ScalarProperty Name="txtRetailName" ColumnName="txtRetailName" />
+                <ScalarProperty Name="txtStatementAmountWithoutTax" ColumnName="txtStatementAmountWithoutTax" />
+                <ScalarProperty Name="txtIssuerDepartmentId" ColumnName="txtIssuerDepartmentId" />
+                <ScalarProperty Name="txtBizTripDescription" ColumnName="txtBizTripDescription" />
+                <ScalarProperty Name="txtPublicTrans_sumPaymentCertificateAmount" ColumnName="txtPublicTrans_sumPaymentCertificateAmount" />
+                <ScalarProperty Name="txtBizTripLocationStart" ColumnName="txtBizTripLocationStart" />
+                <ScalarProperty Name="txtTotalAmount_oilTransportationSubsidyPrice" ColumnName="txtTotalAmount_oilTransportationSubsidyPrice" />
+                <ScalarProperty Name="ddlPrivateTransportation" ColumnName="ddlPrivateTransportation" />
+                <ScalarProperty Name="DateBizTrip" ColumnName="DateBizTrip" />
+                <ScalarProperty Name="txtApplyerDepartmentName" ColumnName="txtApplyerDepartmentName" />
+                <ScalarProperty Name="txtPrivateTrans_sumStatementWithoutAmount" ColumnName="txtPrivateTrans_sumStatementWithoutAmount" />
+                <ScalarProperty Name="hidDdlApplyCategorySelected" ColumnName="hidDdlApplyCategorySelected" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="radioTransferType" ColumnName="radioTransferType" />
+                <ScalarProperty Name="txtPublicTrans_sumStatementAmount" ColumnName="txtPublicTrans_sumStatementAmount" />
+                <ScalarProperty Name="txtBelongDepartmentName" ColumnName="txtBelongDepartmentName" />
+                <ScalarProperty Name="txtAccountItemNo" ColumnName="txtAccountItemNo" />
+                <ScalarProperty Name="txtBelongDepartmentId" ColumnName="txtBelongDepartmentId" />
+                <ScalarProperty Name="hidHasDefaultValue" ColumnName="hidHasDefaultValue" />
+                <ScalarProperty Name="hidPaymentGroup" ColumnName="hidPaymentGroup" />
+                <ScalarProperty Name="txtTotalAmount_etagPrice" ColumnName="txtTotalAmount_etagPrice" />
+                <ScalarProperty Name="radioPrivateTrans_earnMileageSubsidy" ColumnName="radioPrivateTrans_earnMileageSubsidy" />
+                <ScalarProperty Name="txtPaymentTitle" ColumnName="txtPaymentTitle" />
+                <ScalarProperty Name="hidPaymentType" ColumnName="hidPaymentType" />
+                <ScalarProperty Name="hidPublicTransportation" ColumnName="hidPublicTransportation" />
+                <ScalarProperty Name="txtPublicVATNo" ColumnName="txtPublicVATNo" />
+                <ScalarProperty Name="txtPrivateTrans_subsidyLimitAmount" ColumnName="txtPrivateTrans_subsidyLimitAmount" />
+                <ScalarProperty Name="txtPaymentCertificateNo" ColumnName="txtPaymentCertificateNo" />
+                <ScalarProperty Name="txtPrivateTrans_sumStatementAmount" ColumnName="txtPrivateTrans_sumStatementAmount" />
+                <ScalarProperty Name="txtPubicLocationStart" ColumnName="txtPubicLocationStart" />
+                <ScalarProperty Name="hidDicisionCondition" ColumnName="hidDicisionCondition" />
+                <ScalarProperty Name="txtAccountItemName" ColumnName="txtAccountItemName" />
+                <ScalarProperty Name="radioPrivateTrans_subsidyLimit" ColumnName="radioPrivateTrans_subsidyLimit" />
+                <ScalarProperty Name="txtPaymentCertificateWithoutTaxPrice" ColumnName="txtPaymentCertificateWithoutTaxPrice" />
+                <ScalarProperty Name="txtPubicLocationEnd" ColumnName="txtPubicLocationEnd" />
+                <ScalarProperty Name="hidPaymentCondition" ColumnName="hidPaymentCondition" />
+                <ScalarProperty Name="hidPrivateTransportation" ColumnName="hidPrivateTransportation" />
+                <ScalarProperty Name="txtBatchNumber" ColumnName="txtBatchNumber" />
+                <ScalarProperty Name="txtBizTripLocationEnd" ColumnName="txtBizTripLocationEnd" />
+                <ScalarProperty Name="txtPayeeName" ColumnName="txtPayeeName" />
+                <ScalarProperty Name="txtApplyerName" ColumnName="txtApplyerName" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="hidTransferType" ColumnName="hidTransferType" />
+                <ScalarProperty Name="txtIssuerExtNo" ColumnName="txtIssuerExtNo" />
+                <ScalarProperty Name="txtPublicBizDescription" ColumnName="txtPublicBizDescription" />
+                <ScalarProperty Name="txtIssuerDepartmentName" ColumnName="txtIssuerDepartmentName" />
+                <ScalarProperty Name="txtApplyerExtNo" ColumnName="txtApplyerExtNo" />
+                <ScalarProperty Name="txtTaxPrice" ColumnName="txtTaxPrice" />
+                <ScalarProperty Name="txtPublicTrans_sumPaymentCertificateWithoutTaxAmount" ColumnName="txtPublicTrans_sumPaymentCertificateWithoutTaxAmount" />
+                <ScalarProperty Name="ddlPublicTransportation" ColumnName="ddlPublicTransportation" />
+                <ScalarProperty Name="DatePaymentCertificate" ColumnName="DatePaymentCertificate" />
+                <ScalarProperty Name="txtPaymentCertificatePrice" ColumnName="txtPaymentCertificatePrice" />
+                <ScalarProperty Name="txtPublicTrans_sumStatementWithoutTaxAmount" ColumnName="txtPublicTrans_sumStatementWithoutTaxAmount" />
+                <ScalarProperty Name="txtRetailId" ColumnName="txtRetailId" />
+                <ScalarProperty Name="txtPublicTrans_sumTaxAmount" ColumnName="txtPublicTrans_sumTaxAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutsideCostApplyForm_gdPrivateTrans">
+            <EntityTypeMapping TypeName="NaNaModel.OutsideCostApplyForm_gdPrivateTrans">
+              <MappingFragment StoreEntitySet="OutsideCostApplyForm_gdPrivateTrans">
+                <ScalarProperty Name="gd_PrivateTransportation" ColumnName="gd_PrivateTransportation" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="gd_BizTripLocationStart" ColumnName="gd_BizTripLocationStart" />
+                <ScalarProperty Name="gd_DateBizTrip" ColumnName="gd_DateBizTrip" />
+                <ScalarProperty Name="gd_BizTripDescription" ColumnName="gd_BizTripDescription" />
+                <ScalarProperty Name="gd_EarnMileage" ColumnName="gd_EarnMileage" />
+                <ScalarProperty Name="gd_OilTransportationSubsidyPrice" ColumnName="gd_OilTransportationSubsidyPrice" />
+                <ScalarProperty Name="gd_BizTripLocationEnd" ColumnName="gd_BizTripLocationEnd" />
+                <ScalarProperty Name="gd_EtagPrice" ColumnName="gd_EtagPrice" />
+                <ScalarProperty Name="gd_no" ColumnName="gd_no" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutsideCostApplyForm_gdStatement">
+            <EntityTypeMapping TypeName="NaNaModel.OutsideCostApplyForm_gdStatement">
+              <MappingFragment StoreEntitySet="OutsideCostApplyForm_gdStatement">
+                <ScalarProperty Name="gd_formatCode" ColumnName="gd_formatCode" />
+                <ScalarProperty Name="formSerialNumber" ColumnName="formSerialNumber" />
+                <ScalarProperty Name="gd_DatePaymentCertificate_txt" ColumnName="gd_DatePaymentCertificate_txt" />
+                <ScalarProperty Name="gd_PublicBizDescription" ColumnName="gd_PublicBizDescription" />
+                <ScalarProperty Name="gd_BelongDepartmentName" ColumnName="gd_BelongDepartmentName" />
+                <ScalarProperty Name="gd_PublicVATNo" ColumnName="gd_PublicVATNo" />
+                <ScalarProperty Name="gd_TaxPrice" ColumnName="gd_TaxPrice" />
+                <ScalarProperty Name="gd_StatementAmount" ColumnName="gd_StatementAmount" />
+                <ScalarProperty Name="gd_PubicLocationEnd" ColumnName="gd_PubicLocationEnd" />
+                <ScalarProperty Name="gd_TransferType" ColumnName="gd_TransferType" />
+                <ScalarProperty Name="gd_PubicLocationStart" ColumnName="gd_PubicLocationStart" />
+                <ScalarProperty Name="gd_StatementAmountWithoutTax" ColumnName="gd_StatementAmountWithoutTax" />
+                <ScalarProperty Name="gd_PublicTaxRate" ColumnName="gd_PublicTaxRate" />
+                <ScalarProperty Name="gd_BelongDepartmentId" ColumnName="gd_BelongDepartmentId" />
+                <ScalarProperty Name="gd_AccountItemName" ColumnName="gd_AccountItemName" />
+                <ScalarProperty Name="gd_PaymentCertificatePrice" ColumnName="gd_PaymentCertificatePrice" />
+                <ScalarProperty Name="gd_PaymentCertificateWithoutTaxPrice" ColumnName="gd_PaymentCertificateWithoutTaxPrice" />
+                <ScalarProperty Name="gd_PaymentCertificateNo" ColumnName="gd_PaymentCertificateNo" />
+                <ScalarProperty Name="gd_PublicTransportation" ColumnName="gd_PublicTransportation" />
+                <ScalarProperty Name="gd_AccountItemNo" ColumnName="gd_AccountItemNo" />
+                <ScalarProperty Name="gd_no" ColumnName="gd_no" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeTransportationSetting">
+            <EntityTypeMapping TypeName="NaNaModel.EmployeeTransportationSetting">
+              <MappingFragment StoreEntitySet="EmployeeTransportationSetting">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="TransId" ColumnName="TransId" />
+                <ScalarProperty Name="TransType" ColumnName="TransType" />
+                <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilTransportationSubsidy">
+            <EntityTypeMapping TypeName="NaNaModel.OilTransportationSubsidy">
+              <MappingFragment StoreEntitySet="OilTransportationSubsidy">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
+                <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+                <ScalarProperty Name="subsidyPrice" ColumnName="subsidyPrice" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceRuleSetting">
+            <EntityTypeMapping TypeName="NaNaModel.InvoiceRuleSetting">
+              <MappingFragment StoreEntitySet="InvoiceRuleSetting">
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="InvoicePerfixEnglish" ColumnName="InvoicePerfixEnglish" />
+                <ScalarProperty Name="DateEndStr" ColumnName="DateEndStr" />
+                <ScalarProperty Name="DateStartStr" ColumnName="DateStartStr" />
+                <ScalarProperty Name="InvoiceFormatNo" ColumnName="InvoiceFormatNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransportationSetting">
+            <EntityTypeMapping TypeName="NaNaModel.TransportationSetting">
+              <MappingFragment StoreEntitySet="TransportationSetting">
+                <ScalarProperty Name="isNeedCertificateNo" ColumnName="isNeedCertificateNo" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="taxRate" ColumnName="taxRate" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewEmployeeTransportationSetting">
+            <EntityTypeMapping TypeName="NaNaModel.ViewEmployeeTransportationSetting">
+              <MappingFragment StoreEntitySet="ViewEmployeeTransportationSetting">
+                <ScalarProperty Name="functionDefinitionName" ColumnName="functionDefinitionName" />
+                <ScalarProperty Name="organizationUnitName" ColumnName="organizationUnitName" />
+                <ScalarProperty Name="TransId" ColumnName="TransId" />
+                <ScalarProperty Name="TransType" ColumnName="TransType" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

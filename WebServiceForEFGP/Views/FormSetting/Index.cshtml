@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+
+</head>
+<body>
+    <div style="margin:10px;"> 
+        <div class="form-group">
+
+            表單：
+            <div>
+            </div>            
+            <select>
+                <option>
+                    - 請選擇 -
+                </option>
+            </select>
+
+            欄位名稱：
+            <select>
+                <option>- 請選擇 -</option>
+            </select>
+
+            <button type="button">
+                搜尋
+            </button>
+
+            <button type="button">
+                新增
+            </button>
+
+            
+        </div>
+        <div>
+
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")    
+
+    <script type="text/javascript">
+
+        try {
+            window.parent.hideDialog(window.parent.gDialog)
+        } catch (e) {
+            console.error(e);
+        }
+
+    </script>
+
+
+</body>
+</html>

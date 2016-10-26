@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb84a35d5f6a40c9b0c0396af54475d3" Name="Diagram1" ZoomLevel="51">
+        <EntityTypeShape EntityType="NaNaModel.MSG001" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NaNaModel.MSG001_gridMsg" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NaNaModel.FormFieldsSetting" Width="1.5" PointX="4.75" PointY="4.5" />
+        <EntityTypeShape EntityType="NaNaModel.FormOptionsSetting" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.ViewEmployeeLightInfo" Width="1.5" PointX="6.5" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.AccountItemTaxRateSetting" Width="1.5" PointX="6.5" PointY="3.125" />
+        <EntityTypeShape EntityType="NaNaModel.CostApplyForm" Width="1.5" PointX="10" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.CostApplyForm_gridNotWithholdList" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.CostApplyForm_gridWithholdList" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.TempPaymentApplyForm" Width="1.5" PointX="2.875" PointY="6.75" />
+        <EntityTypeShape EntityType="NaNaModel.OutsideCostApplyForm" Width="1.5" PointX="15.25" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.OutsideCostApplyForm_gdPrivateTrans" Width="1.5" PointX="13.5" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.OutsideCostApplyForm_gdStatement" Width="1.5" PointX="13.5" PointY="4.125" />
+        <EntityTypeShape EntityType="NaNaModel.EmployeeTransportationSetting" Width="1.5" PointX="17.125" PointY="5.75" />
+        <EntityTypeShape EntityType="NaNaModel.OilTransportationSubsidy" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="NaNaModel.InvoiceRuleSetting" Width="1.5" PointX="17.125" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.TransportationSetting" Width="1.5" PointX="17.125" PointY="3.25" />
+        <EntityTypeShape EntityType="NaNaModel.ViewEmployeeTransportationSetting" Width="1.5" PointX="4.75" PointY="7.875" />
+        <EntityTypeShape EntityType="NaNaModel.ViewERAUsersOrganizationUnitDepartment" Width="1.5" PointX="17.125" PointY="17.625" />
+        <EntityTypeShape EntityType="NaNaModel.OrganizationUnit" Width="1.5" PointX="13.5" PointY="9.75" />
+        <EntityTypeShape EntityType="NaNaModel.ERACategoryForInf" Width="1.5" PointX="17.125" PointY="10.625" />
+        <EntityTypeShape EntityType="NaNaModel.ERAPermissionForInf" Width="1.5" PointX="17.125" PointY="8.125" />
+        <EntityTypeShape EntityType="NaNaModel.ViewERACategoryPermissionForInf" Width="1.5" PointX="17.125" PointY="13.375" />
+        <EntityTypeShape EntityType="NaNaModel.ERACategoryDynamicField" Width="1.5" PointX="12.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NaNaModel.ERADynamicFieldSetting" Width="1.5" PointX="3.375" PointY="14.75" />
+        <EntityTypeShape EntityType="NaNaModel.ViewERACategoryPermissionDynamicFieldSettingForInf" Width="1.5" PointX="5.375" PointY="14.75" />
+        <EntityTypeShape EntityType="NaNaModel.HireEmployeeForm" Width="1.5" PointX="19.25" PointY="0.75" />
+        <EntityTypeShape EntityType="NaNaModel.HireEmployeeForm_gdProjectAchievement" Width="1.5" PointX="0.75" PointY="15.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://business_delegate.user_interface.nana.dsc.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://webservice.nana.dsc.com/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://util.nana.dsc.com" xmlns:tns2="http://exception.ajax_service.web.user_interface.nana.dsc.com" xmlns:impl="http://webservice.nana.dsc.com/" targetNamespace="http://webservice.nana.dsc.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://util.nana.dsc.com">
+      <xsd:import namespace="http://business_delegate.user_interface.nana.dsc.com" />
+      <xsd:import namespace="http://exception.ajax_service.web.user_interface.nana.dsc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="BaseException">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="SystemException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://exception.ajax_service.web.user_interface.nana.dsc.com">
+      <xsd:import namespace="http://business_delegate.user_interface.nana.dsc.com" />
+      <xsd:import namespace="http://util.nana.dsc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="AjaxException">
+        <xsd:sequence>
+          <xsd:element name="clazzName" nillable="true" type="xsd:string" />
+          <xsd:element name="methodName" nillable="true" type="xsd:string" />
+          <xsd:element name="originMessage" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://business_delegate.user_interface.nana.dsc.com">
+      <xsd:import namespace="http://util.nana.dsc.com" />
+      <xsd:import namespace="http://exception.ajax_service.web.user_interface.nana.dsc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="BusinessDelegateException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseException">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="doSyncProcessResponse">
+    <wsdl:part name="doSyncProcessReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="invokeMdmRequest">
+    <wsdl:part name="pRequestXml" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDigestCodeRequest">
+    <wsdl:part name="pHashType" type="xsd:string" />
+    <wsdl:part name="pSrcStr" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemException">
+    <wsdl:part name="fault" type="tns1:SystemException" />
+  </wsdl:message>
+  <wsdl:message name="invokeSrvRequest">
+    <wsdl:part name="pRequestXml" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDigestCodeResponse">
+    <wsdl:part name="getDigestCodeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="invokeMdmResponse">
+    <wsdl:part name="invokeMdmReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="invokeSrvResponse">
+    <wsdl:part name="invokeSrvReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="doSyncProcessRequest">
+    <wsdl:part name="pWSDL" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="syncProdResponse">
+    <wsdl:part name="syncProdReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="syncEncodingStateResponse">
+    <wsdl:part name="syncEncodingStateReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="syncProdRequest">
+    <wsdl:part name="pRequestXml" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="BusinessDelegateException">
+    <wsdl:part name="fault" type="tns3:BusinessDelegateException" />
+  </wsdl:message>
+  <wsdl:message name="AjaxException">
+    <wsdl:part name="fault" type="tns2:AjaxException" />
+  </wsdl:message>
+  <wsdl:message name="syncEncodingStateRequest">
+    <wsdl:part name="pBase64Status" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="callbackSrvResponse">
+    <wsdl:part name="callbackSrvReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="callbackSrvRequest">
+    <wsdl:part name="pRequestXml" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="CrossIntegrationEFGP">
+    <wsdl:operation name="invokeSrv" parameterOrder="pRequestXml">
+      <wsdl:input name="invokeSrvRequest" message="impl:invokeSrvRequest" />
+      <wsdl:output name="invokeSrvResponse" message="impl:invokeSrvResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="callbackSrv" parameterOrder="pRequestXml">
+      <wsdl:input name="callbackSrvRequest" message="impl:callbackSrvRequest" />
+      <wsdl:output name="callbackSrvResponse" message="impl:callbackSrvResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="syncProd" parameterOrder="pRequestXml">
+      <wsdl:input name="syncProdRequest" message="impl:syncProdRequest" />
+      <wsdl:output name="syncProdResponse" message="impl:syncProdResponse" />
+      <wsdl:fault name="SystemException" message="impl:SystemException" />
+      <wsdl:fault name="AjaxException" message="impl:AjaxException" />
+    </wsdl:operation>
+    <wsdl:operation name="getDigestCode" parameterOrder="pHashType pSrcStr">
+      <wsdl:input name="getDigestCodeRequest" message="impl:getDigestCodeRequest" />
+      <wsdl:output name="getDigestCodeResponse" message="impl:getDigestCodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doSyncProcess" parameterOrder="pWSDL">
+      <wsdl:input name="doSyncProcessRequest" message="impl:doSyncProcessRequest" />
+      <wsdl:output name="doSyncProcessResponse" message="impl:doSyncProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="syncEncodingState" parameterOrder="pBase64Status">
+      <wsdl:input name="syncEncodingStateRequest" message="impl:syncEncodingStateRequest" />
+      <wsdl:output name="syncEncodingStateResponse" message="impl:syncEncodingStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="invokeMdm" parameterOrder="pRequestXml">
+      <wsdl:input name="invokeMdmRequest" message="impl:invokeMdmRequest" />
+      <wsdl:output name="invokeMdmResponse" message="impl:invokeMdmResponse" />
+      <wsdl:fault name="BusinessDelegateException" message="impl:BusinessDelegateException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrossIntegrationEFGPSoapBinding" type="impl:CrossIntegrationEFGP">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="invokeSrv">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="invokeSrvRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="invokeSrvResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="callbackSrv">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="callbackSrvRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="callbackSrvResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncProd">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="syncProdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="syncProdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <wsdlsoap:fault use="encoded" name="SystemException" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="AjaxException">
+        <wsdlsoap:fault use="encoded" name="AjaxException" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDigestCode">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDigestCodeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getDigestCodeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSyncProcess">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="doSyncProcessRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="doSyncProcessResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncEncodingState">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="syncEncodingStateRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="syncEncodingStateResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeMdm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="invokeMdmRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="invokeMdmResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="BusinessDelegateException">
+        <wsdlsoap:fault use="encoded" name="BusinessDelegateException" namespace="http://webservice.nana.dsc.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrossIntegrationEFGPService">
+    <wsdl:port name="CrossIntegrationEFGP" binding="impl:CrossIntegrationEFGPSoapBinding">
+      <wsdlsoap:address location="http://172.22.128.187:8086/NaNaWeb/services/CrossIntegrationEFGP" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
