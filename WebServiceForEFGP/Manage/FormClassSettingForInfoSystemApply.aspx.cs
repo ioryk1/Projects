@@ -25,6 +25,9 @@ namespace WebServiceForEFGP.Manage {
 
             query_id = Request.QueryString["id"] as string;
 
+            //2016/10/26
+            //test git
+
             if (string.IsNullOrEmpty(query_id)) {
                 //this.MultiView.SetActiveView(View_list);
                 this.MultiView.ActiveViewIndex = 0;
